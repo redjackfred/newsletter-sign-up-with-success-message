@@ -58,4 +58,7 @@
 	.bg-gradient {
 		@apply from-orange to-pink bg-linear-to-r;
 	}
+	.button-color {
+		@apply xl:from-orange xl:to-pink bg-blue-800 xl:bg-linear-to-r;
+	}
 }
