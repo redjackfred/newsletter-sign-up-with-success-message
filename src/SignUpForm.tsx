@@ -1,5 +1,6 @@
 import { useState } from "react";
 import IllustrationMobile from "/src/assets/images/illustration-sign-up-mobile.svg";
+import IllustrationTablet from "/src/assets/images/illustration-sign-up-tablet.svg";
 import ListIcon from "/src/assets/images/icon-list.svg";
 import * as z from "zod";
 
@@ -38,23 +39,29 @@ export default function SignUpForm({
 	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		setEmail(e.target.value);
 		if (errors) {
-			setErrors((prev) => null);
+			setErrors(() => null);
 		}
 	};
 
 	return (
 		<form
-			className="novalidate relative min-h-screen w-full gap-10 bg-white px-6"
+			className="novalidate relative min-h-screen w-full gap-10 bg-white px-6 md:min-h-[878px] md:w-[608px] md:rounded-[36px] md:px-10 md:py-[42.86px]"
 			onSubmit={handleSubmit}
 		>
 			<img
 				src={IllustrationMobile}
-				className="absolute inset-0 h-[284px] object-cover"
+				className="absolute inset-0 h-[284px] object-cover md:hidden"
 			/>
-			<div className="relative top-[324px]">
+			<img
+				src={IllustrationTablet}
+				className="relative hidden h-[358px] w-full rounded-2xl md:block"
+			/>
+			<div className="relative top-[324px] md:top-10">
 				<section className="flex flex-col gap-6">
-					<h1 className="text-preset-1-mobile text-blue-800">Stay updated!</h1>
-					<p>Join 60,000+ product managers receiving monthly updates on:</p>
+					<h1 className="text-preset-1 text-blue-800">Stay updated!</h1>
+					<p className="text-preset-2-regular">
+						Join 60,000+ product managers receiving monthly updates on:
+					</p>
 					<ul className="text-preset-2-regular flex flex-col gap-2 text-blue-800">
 						<li className="flex items-start gap-4">
 							<img src={ListIcon} className="flex-shrink-0"></img>Product
@@ -70,7 +77,7 @@ export default function SignUpForm({
 						</li>
 					</ul>
 				</section>
-				<section className="mt-10 pb-[44px]">
+				<section className="mt-10 pb-[44px] md:mt-6 md:pb-[42.86px]">
 					<div className="flex items-center justify-between">
 						<label htmlFor="email" className="text-preset-3 text-blue-800">
 							Email address

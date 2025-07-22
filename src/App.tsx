@@ -7,7 +7,7 @@ function App() {
 	const [showThankMessage, setShowThankMessage] = useState(false);
 
 	return (
-		<div className="min-h-screen bg-blue-700">
+		<div className="flex min-h-screen flex-col items-center justify-center bg-blue-700">
 			{showThankMessage ? (
 				<ThankMessage
 					email="abc@gmail.com"

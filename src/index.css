@@ -29,17 +29,10 @@
 @layer components {
 	.text-preset-1 {
 		font-family: "Roboto", sans-serif;
-		font-size: 56px;
 		font-weight: 700;
 		line-height: 100%;
 		letter-spacing: 0;
-	}
-	.text-preset-1-mobile {
-		font-family: "Roboto", sans-serif;
-		font-size: 40px;
-		font-weight: 700;
-		line-height: 100%;
-		letter-spacing: 0;
+		@apply text-[40px] md:text-[56px];
 	}
 	.text-preset-2 {
 		font-family: "Roboto", sans-serif;
